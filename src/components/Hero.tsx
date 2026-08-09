@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+const phrases = ['Application Development', 'Product Management', 'Data Analytics'];
+
 const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const phrases = ['Application Development', 'Product Management', 'Data Analytics'];
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,28 +23,26 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const currentPhrase = phrases[currentIndex];
+    const isFinishedTyping = !isDeleting && currentText === currentPhrase;
     const typingSpeed = isDeleting ? 100 : 150;
-    const pauseTime = isDeleting ? 500 : 2000;
+    const pauseTime = 2000;
+    const delay = isFinishedTyping ? pauseTime : typingSpeed;
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting && currentText === currentPhrase) {
-        // Finished typing, start deleting after pause
-        setTimeout(() => setIsDeleting(true), pauseTime);
+    const timeout = window.setTimeout(() => {
+      if (isFinishedTyping) {
+        setIsDeleting(true);
       } else if (isDeleting && currentText === '') {
-        // Finished deleting, move to next phrase
         setIsDeleting(false);
         setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
       } else if (isDeleting) {
-        // Continue deleting
         setCurrentText(currentPhrase.substring(0, currentText.length - 1));
       } else {
-        // Continue typing
         setCurrentText(currentPhrase.substring(0, currentText.length + 1));
       }
-    }, typingSpeed);
+    }, delay);
 
     return () => clearTimeout(timeout);
-  }, [currentText, currentIndex, isDeleting, phrases]);
+  }, [currentText, currentIndex, isDeleting]);
 
 
   const scrollToAbout = () => {
