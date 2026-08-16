@@ -73,17 +73,17 @@ export default function Background() {
       <div className="section-label">06 — BACKGROUND</div>
       <h3 className="section-title">Credentials &amp; Education</h3>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
-        <section>
-          <div className="mb-4 flex items-center gap-2 text-xs font-semibold tracking-[.2em] text-muted">
+      <div className="mt-6 grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:overflow-hidden">
+        <section className="min-w-0 overflow-hidden">
+          <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-[.2em] text-muted">
             <GraduationCap size={16} className="text-accent" /> EDUCATION
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {education.map(({ school, schoolUrl, degree, degreeUrl, period, grade, note, skills, Icon }, index) => (
               <article
                 key={`${school}-${degree}`}
-                className="glass-card group flex gap-4 p-4 transition-colors hover:border-[color:var(--accent)] md:gap-5 md:p-5"
+                className="glass-card group flex gap-3 p-3 text-sm transition-colors hover:border-[color:var(--accent)] md:gap-4 md:p-4"
               >
                 <div className="flex flex-col items-center">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-accent">
@@ -93,66 +93,66 @@ export default function Background() {
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                  <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-start">
                     <div className="min-w-0">
-                      <a href={schoolUrl} target="_blank" rel="noreferrer" className="block font-semibold text-strong hover:text-accent">
+                      <a href={schoolUrl} target="_blank" rel="noreferrer" className="block font-semibold leading-snug text-strong hover:text-accent">
                         {school}
                       </a>
-                      <a href={degreeUrl} target="_blank" rel="noreferrer" className="mt-1 block text-sm leading-relaxed text-body hover:text-accent">
+                      <a href={degreeUrl} target="_blank" rel="noreferrer" className="mt-0.5 block text-xs leading-snug text-body hover:text-accent">
                         {degree}
                       </a>
                     </div>
-                    <span className="shrink-0 rounded-lg bg-[color:var(--accent-soft)] px-2 py-1 font-mono text-[10px] font-medium text-accent">
+                    <span className="shrink-0 rounded-lg bg-[color:var(--accent-soft)] px-1.5 py-0.5 font-mono text-[9px] font-medium text-accent">
                       {grade}
                     </span>
                   </div>
 
-                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-muted">
+                  <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5 font-mono text-[10px] text-muted">
                     <span className="flex items-center gap-1">
                       <CalendarDays size={13} />
                       {period}
                     </span>
                   </div>
 
-                  {note && <p className="mt-3 text-sm leading-relaxed text-muted">{note}</p>}
-                  {skills && <p className="mt-2 text-sm leading-relaxed text-muted">{skills}</p>}
+                  {note && <p className="mt-2 text-xs leading-tight text-muted">{note}</p>}
+                  {skills && <p className="mt-1 text-xs leading-tight text-muted">{skills}</p>}
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section>
-          <div className="mb-4 flex items-center gap-2 text-xs font-semibold tracking-[.2em] text-muted">
+        <section className="min-w-0 overflow-hidden">
+          <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-[.2em] text-muted">
             <Award size={16} className="text-accent" /> CERTIFICATIONS
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {certifications.map(({ brand, title, issuer, date, credential, mark, brandClass }) => (
               <article
                 key={title}
-                className="glass-card group p-4 transition-all hover:-translate-y-0.5 hover:border-[color:var(--accent)] md:p-5"
+                className="glass-card group p-3 text-sm transition-all hover:-translate-y-0.5 hover:border-[color:var(--accent)] md:p-4"
               >
                 <div className="flex gap-4">
-                  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[11px] font-bold text-white ${brandClass}`}>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[10px] font-bold text-white ${brandClass}`}>
                     {mark}
                   </span>
 
                   <div className="min-w-0 flex-1">
-                    <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start justify-between gap-2">
                       <div>
-                        <div className="font-mono text-[.65rem] tracking-[.16em] text-accent">{brand}</div>
-                        <h4 className="mt-1 font-semibold leading-snug text-strong">{title}</h4>
+                        <div className="font-mono text-[.6rem] tracking-[.16em] text-accent">{brand}</div>
+                        <h4 className="mt-0.5 font-semibold leading-tight text-strong text-sm">{title}</h4>
                       </div>
-                      <BadgeCheck size={18} className="shrink-0 text-accent" />
+                      <BadgeCheck size={16} className="shrink-0 text-accent" />
                     </div>
-                    <p className="mt-1 text-sm text-body">{issuer}</p>
+                    <p className="mt-0.5 text-xs text-body">{issuer}</p>
                   </div>
                 </div>
 
-                <div className="mt-4 border-t border-[color:var(--border)] pt-3 font-mono text-[.7rem] leading-relaxed text-muted">
-                  <div>{date}</div>
-                  <div className="mt-1 break-all">Credential ID {credential}</div>
+                <div className="mt-2 border-t border-[color:var(--border)] pt-2 font-mono text-[.65rem] leading-tight text-muted">
+                  <div className="text-[10px]">{date}</div>
+                  <div className="mt-0.5 break-all text-[9px]">Credential ID {credential}</div>
                 </div>
               </article>
             ))}

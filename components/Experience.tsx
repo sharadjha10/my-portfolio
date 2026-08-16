@@ -37,58 +37,58 @@ export default function Experience() {
         <p className="max-w-sm text-sm text-muted">Designing dependable data systems from ingestion through insight.</p>
       </div>
 
-      <div className="mt-8 space-y-4">
+      <div className="mt-6 space-y-3">
         {experiences.map((exp, index) => (
           <article
             key={exp.title}
-            className={`group grid overflow-hidden rounded-2xl border transition-colors md:grid-cols-[190px_1fr] ${exp.current ? 'border-[color:var(--accent)] bg-[color:var(--surface)]' : 'border-[color:var(--border)] bg-[color:var(--surface)] hover:border-[color:var(--border-strong)]'}`}
+            className={`group grid overflow-hidden rounded-xl border transition-colors md:grid-cols-[160px_1fr] text-sm ${exp.current ? 'border-[color:var(--accent)] bg-[color:var(--surface)]' : 'border-[color:var(--border)] bg-[color:var(--surface)] hover:border-[color:var(--border-strong)]'}`}
           >
-            <div className="border-b border-[color:var(--border)] bg-[color:var(--chip-bg)] p-5 md:border-b-0 md:border-r md:p-6">
+            <div className="border-b border-[color:var(--border)] bg-[color:var(--chip-bg)] p-3 md:border-b-0 md:border-r md:p-4">
               <div className="flex items-center gap-2 font-mono text-xs text-accent">
-                <CalendarDays size={15} />
-                {index === 0 ? 'CURRENT ROLE' : 'EARLIER ROLE'}
+                <CalendarDays size={14} />
+                {index === 0 ? 'CURRENT' : 'EARLIER'}
               </div>
-              <div className="mt-5 text-sm font-semibold text-strong">{exp.company}</div>
-              <div className="mt-1 font-mono text-xs leading-relaxed text-muted">{exp.range}</div>
-              <div className="mt-6 flex items-center gap-2 text-xs text-muted">
+              <div className="mt-3 text-xs font-semibold text-strong">{exp.company}</div>
+              <div className="mt-0.5 font-mono text-[10px] leading-tight text-muted">{exp.range}</div>
+              <div className="mt-3 flex items-center gap-2 text-[10px] text-muted">
                 <span className={`h-2.5 w-2.5 rounded-full ${exp.current ? 'bg-[color:var(--success)] ring-4 ring-[color:var(--accent-soft)]' : 'bg-[color:var(--border-strong)]'}`} />
                 {exp.current ? 'Active' : 'Completed'}
               </div>
             </div>
 
-            <div className="p-5 md:p-6">
-              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+            <div className="p-3 md:p-4">
+              <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                 <div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h4 className="text-xl font-bold tracking-tight text-strong">{exp.title}</h4>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h4 className="text-sm font-bold tracking-tight text-strong">{exp.title}</h4>
                     {exp.current && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-xs font-semibold text-accent">
-                        <BadgeCheck size={14} /> Current
+                      <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-[10px] font-semibold text-accent">
+                        <BadgeCheck size={12} /> Active
                       </span>
                     )}
                   </div>
-                  <p className="mt-2 text-sm text-muted">{exp.summary}</p>
+                  <p className="mt-1 text-xs text-muted">{exp.summary}</p>
                 </div>
-                <span className="hidden rounded-xl border border-[color:var(--border)] p-2 text-accent sm:block">
-                  <Briefcase size={19} />
+                <span className="hidden rounded-lg border border-[color:var(--border)] p-1.5 text-accent sm:block">
+                  <Briefcase size={16} />
                 </span>
               </div>
 
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-3 space-y-1.5">
                 {exp.bullets.map((bullet) => (
-                  <li key={bullet} className="flex min-w-0 items-start gap-3 text-sm leading-6 text-body">
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[color:var(--accent)] ring-4 ring-[color:var(--accent-soft)]" />
+                  <li key={bullet} className="flex min-w-0 items-start gap-2 text-xs leading-tight text-body">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]" />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[color:var(--border)] pt-4">
+              <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-[color:var(--border)] pt-2">
                 {exp.skills.map((skill) => (
-                  <span key={skill} className="chip">{skill}</span>
+                  <span key={skill} className="chip text-[11px]">{skill}</span>
                 ))}
-                <span className="ml-auto hidden items-center gap-1 text-xs font-semibold text-accent sm:inline-flex">
-                  Role details <ChevronRight size={15} />
+                <span className="ml-auto hidden items-center gap-1 text-[10px] font-semibold text-accent sm:inline-flex">
+                  Role details <ChevronRight size={13} />
                 </span>
               </div>
             </div>
