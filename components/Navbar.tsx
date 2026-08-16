@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { ArrowUpRight, Menu, X, Sun, Moon } from 'lucide-react'
-import Image from 'next/image'
-import profilePicture from './Assets/profilepic.jpeg'
 
 const navItems = [
   { id: 'home', label: 'Home' }, { id: 'about', label: 'About' }, { id: 'skills', label: 'Skills' },
@@ -23,7 +21,9 @@ export default function Navbar() {
   }
   return <header className="site-header fixed inset-x-0 top-0 z-50">
     <div className="container grid h-full grid-cols-[auto_1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
-      <a href="#home" className="flex shrink-0 items-center gap-3 md:justify-self-start"><Image src={profilePicture} alt="Sharad Jha" className="h-10 w-10 rounded-xl border border-[color:var(--border)] object-cover object-center" priority/><span className="hidden text-sm font-semibold text-strong sm:block">Sharad Jha</span></a>
+      <a href="#home" className="flex shrink-0 items-center md:justify-self-start">
+        <span className="text-sm font-semibold text-strong sm:text-base">Sharad Jha</span>
+      </a>
       <nav aria-label="Main navigation" className="hidden items-center justify-center gap-7 md:flex lg:gap-9">
         {navItems.map((n) => <a key={n.id} href={`#${n.id}`} className="group relative py-1 text-sm font-semibold text-body transition-colors hover:text-strong"><span>{n.label}</span><span className="absolute -bottom-1 left-0 h-px w-0 bg-[color:var(--accent)] transition-all duration-300 group-hover:w-full" /></a>)}
       </nav>

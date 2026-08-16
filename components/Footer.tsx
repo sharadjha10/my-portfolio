@@ -1,13 +1,21 @@
 import React from 'react'
+import Image from 'next/image'
 import data from '../data/siteConfig'
+import profilePicture from './Assets/profilepic.jpeg'
 
 export default function Footer() {
   return (
     <footer className="border-t border-[color:var(--border)] py-8 md:py-10">
       <div className="container grid gap-8 md:grid-cols-3 md:gap-6">
         <div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[color:var(--accent-soft)] text-sm font-bold text-strong ring-1 ring-[color:var(--border)]">
-            SJ
+          <div className="h-9 w-9 overflow-hidden rounded-lg ring-1 ring-[color:var(--border)]">
+            <Image
+              src={profilePicture}
+              alt="Sharad Jha"
+              className="h-full w-full object-cover object-center"
+              width={36}
+              height={36}
+            />
           </div>
           <div className="mt-3 font-semibold text-strong">Sharad Jha</div>
           <div className="mt-2 text-sm leading-relaxed text-muted">
