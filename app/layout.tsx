@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   description: 'Data Engineer specializing in Snowflake, dbt, SQL, Python, AWS, ETL/ELT, data modeling, and modern cloud data engineering.',
   openGraph: {
     title: 'Sharad Jha | Data Engineer',
-    description: 'Data Engineer specializing in Snowflake, dbt, SQL, Python, AWS, ETL/ELT, data modeling, and modern cloud data engineering.'
-  }
+    description: 'Data Engineer specializing in Snowflake, dbt, SQL, Python, AWS, ETL/ELT, data modeling, and modern cloud data engineering.',
+  },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }){
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <Navbar />
-        <main className="pt-24">{children}</main>
+        <main style={{ paddingTop: 'var(--nav-height)' }}>{children}</main>
       </body>
     </html>
   )

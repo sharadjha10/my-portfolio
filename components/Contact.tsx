@@ -1,29 +1,10 @@
 import React from 'react'
+import { ArrowUpRight, Github, Linkedin, Mail, Send } from 'lucide-react'
 import data from '../data/siteConfig'
 
-export default function Contact(){
-  return (
-    <div className="grid md:grid-cols-2 gap-8">
-      <div>
-        <div className="section-label">07 — CONTACT</div>
-        <h3 className="text-4xl font-extrabold mb-6">Let's Build Something With Data</h3>
-        <p className="text-muted mb-6">Have a data engineering project, analytics challenge, or opportunity in mind? Let's connect.</p>
-
-        <div className="space-y-4">
-          <a className="glass-card p-4 block">Email <div className="text-sm text-muted">{data.social.email || '—'}</div></a>
-          <a className="glass-card p-4 block">GitHub <div className="text-sm text-muted">View repositories</div></a>
-          <a className="glass-card p-4 block">LinkedIn <div className="text-sm text-muted">Connect professionally</div></a>
-        </div>
-      </div>
-
-      <form className="glass-card p-6">
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <input aria-label="name" placeholder="Your name" className="p-3 bg-transparent border border-white/5 rounded" />
-          <input aria-label="email" placeholder="you@company.com" className="p-3 bg-transparent border border-white/5 rounded" />
-        </div>
-        <textarea aria-label="message" placeholder="Tell me about the project or opportunity..." className="w-full p-3 bg-transparent border border-white/5 rounded h-32 mb-4" />
-        <button type="submit" className="px-4 py-2 bg-[color:var(--accent)] rounded text-white">Send Message</button>
-      </form>
-    </div>
-  )
-}
+const contacts = [
+  { label: 'Email', value: 'hello@example.com', Icon: Mail, href: (email: string) => `mailto:${email}` },
+  { label: 'GitHub', value: 'View repositories', Icon: Github, href: () => data.social.github || '#' },
+  { label: 'LinkedIn', value: 'Connect professionally', Icon: Linkedin, href: () => data.social.linkedin || '#' },
+]
+export default function Contact() { const email = data.social.email || 'hello@example.com'; return <div className="grid gap-9 md:grid-cols-2 md:gap-14"><div><div className="section-label">07 — CONTACT</div><h3 className="section-title">Let&apos;s Build Something With Data</h3><p className="mb-9 mt-12 max-w-md text-base leading-relaxed text-muted">Have a data engineering project, analytics challenge, or opportunity in mind? Let&apos;s connect.</p><div className="space-y-3">{contacts.map(({ label, value, Icon, href }) => <a key={label} href={href(email)} className="glass-card flex items-center gap-4 p-4 transition-colors hover:border-[color:var(--accent)]"><span className="rounded-xl bg-[color:var(--accent-soft)] p-3 text-accent"><Icon size={19}/></span><div className="flex-1"><div className="text-xs text-muted">{label}</div><div className="text-sm font-semibold text-strong">{label === 'Email' ? email : value}</div></div><ArrowUpRight size={16} className="text-muted"/></a>)}</div></div><form className="glass-card self-center p-5 md:p-6"><div className="grid gap-4 sm:grid-cols-2"><label className="text-sm font-semibold text-strong">Name<input aria-label="name" placeholder="Your name" className="mt-2 w-full rounded-xl border border-[color:var(--border)] bg-transparent p-3 text-sm font-normal text-body placeholder:text-muted focus:border-[color:var(--accent)] focus:outline-none"/></label><label className="text-sm font-semibold text-strong">Email<input aria-label="email" placeholder="you@company.com" className="mt-2 w-full rounded-xl border border-[color:var(--border)] bg-transparent p-3 text-sm font-normal text-body placeholder:text-muted focus:border-[color:var(--accent)] focus:outline-none"/></label></div><label className="mt-5 block text-sm font-semibold text-strong">Message<textarea aria-label="message" placeholder="Tell me about the project or opportunity..." className="mt-2 h-32 w-full resize-none rounded-xl border border-[color:var(--border)] bg-transparent p-3 text-sm font-normal text-body placeholder:text-muted focus:border-[color:var(--accent)] focus:outline-none"/></label><button type="submit" className="btn-primary mt-5 gap-2"><Send size={16}/> Send Message</button></form></div> }

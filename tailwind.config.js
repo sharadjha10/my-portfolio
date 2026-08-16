@@ -8,19 +8,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#0b0b0d',
-        panel: '#0f1113',
-        muted: '#9ca3af',
-        accent: '#2f6fff'
+        bg: 'var(--bg)',
+        panel: 'var(--panel)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+      },
+      spacing: {
+        nav: 'var(--nav-height)',
       },
       boxShadow: {
-        subtle: '0 6px 18px rgba(3,7,18,0.6)'
-      }
-    }
+        subtle: '0 6px 18px rgba(3, 7, 18, 0.6)',
+        glow: '0 0 24px var(--accent-glow)',
+      },
+    },
   },
   plugins: [],
 }
