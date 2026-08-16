@@ -13,7 +13,7 @@ export default function Navbar() {
   useEffect(() => { const saved = localStorage.getItem('theme'); setDark(saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches) }, [])
   useEffect(() => { if (dark === null) return; document.documentElement.dataset.theme = dark ? 'dark' : 'light'; document.body.dataset.theme = dark ? 'dark' : 'light'; localStorage.setItem('theme', dark ? 'dark' : 'light') }, [dark])
   const toggleTheme = () => {
-    const nextDark = document.documentElement.dataset.theme !== 'light'
+    const nextDark = document.documentElement.dataset.theme === 'light'
     document.documentElement.dataset.theme = nextDark ? 'dark' : 'light'
     document.body.dataset.theme = nextDark ? 'dark' : 'light'
     localStorage.setItem('theme', nextDark ? 'dark' : 'light')
