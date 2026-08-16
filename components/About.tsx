@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
+    <div className="grid min-h-full items-center gap-8 md:grid-cols-2 md:gap-14">
       <div>
         <div className="section-label">01 — INTRODUCTION</div>
         <h2 className="section-title">About Me</h2>
@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </div>
 
-      <aside className="glass-card p-5 md:p-6">
+      <aside className="glass-card self-center p-6 md:p-8">
         <div className="mb-4 text-xs font-semibold tracking-wide text-accent">TECHNICAL PROFILE</div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-3">
           <div className="text-sm text-muted">Current Role</div>
