@@ -6,6 +6,9 @@ import Navbar from '../components/Navbar'
 export const metadata: Metadata = {
   title: 'Sharad Jha | Data Engineer',
   description: 'Data Engineer specializing in Snowflake, dbt, SQL, Python, AWS, ETL/ELT, data modeling, and modern cloud data engineering.',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Sharad Jha | Data Engineer',
     description: 'Data Engineer specializing in Snowflake, dbt, SQL, Python, AWS, ETL/ELT, data modeling, and modern cloud data engineering.',

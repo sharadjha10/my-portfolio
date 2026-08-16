@@ -42,6 +42,7 @@ html[data-theme='light'] body { background: radial-gradient(circle at top, rgba(
 .text-strong { color: var(--text-strong); } .text-body { color: var(--text); } .text-muted { color: var(--muted); } .text-accent { color: var(--accent); }
 .glass-card { border: 1px solid var(--border); border-radius: .9rem; background: var(--surface); box-shadow: inset 0 1px 0 rgba(255,255,255,.025); }
 .chip { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: .42rem; background: var(--chip-bg); padding: .28rem .65rem; color: var(--text-strong); font: 500 .72rem/1.1 'DM Mono', monospace; white-space: nowrap; }
+.workflow-chip { max-width: 100%; white-space: normal; word-break: break-word; overflow-wrap: anywhere; }
 .btn-primary { display: inline-flex; align-items: center; justify-content: center; border-radius: .7rem; background: var(--accent); padding: .75rem 1.1rem; color: white; font-size: .875rem; font-weight: 700; transition: transform .2s, background .2s; }
 .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
 .btn-secondary { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: .7rem; background: var(--surface); padding: .72rem 1rem; color: var(--text-strong); font-size: .875rem; font-weight: 600; transition: background .2s, border-color .2s; }

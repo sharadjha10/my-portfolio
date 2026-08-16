@@ -37,10 +37,12 @@ export default function Projects() {
 
                 <div className="mt-5 rounded-xl border border-[color:var(--border)] bg-[color:var(--chip-bg)] p-3">
                   <div className="font-mono text-[.6rem] tracking-[.2em] text-muted">WORKFLOW</div>
-                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <div className="mt-3 flex flex-wrap items-center gap-2 max-sm:justify-start">
                     {flowSteps.map((step, stepIndex) => (
                       <React.Fragment key={`${project.title}-${step}`}>
-                        <span className="chip whitespace-normal break-words text-left leading-tight">{step}</span>
+                        <span className="chip workflow-chip text-left leading-tight">
+                          {step}
+                        </span>
                         {stepIndex < flowSteps.length - 1 && <ArrowUpRight size={12} className="shrink-0 text-muted" />}
                       </React.Fragment>
                     ))}
