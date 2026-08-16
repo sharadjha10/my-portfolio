@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: #0b0b0d;
+  --panel: #0f1113;
+  --muted: #9ca3af;
+  --accent: #2f6fff;
+}
+
+html,body,#root{
+  height:100%;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  @apply bg-[color:var(--bg)] text-slate-100 font-sans leading-relaxed;
+  background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.section-label{
+  @apply text-xs tracking-widest text-[color:var(--accent)] mb-4;
+}
+
+.glass-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 14px;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none!important; animation:none!important }
+}
