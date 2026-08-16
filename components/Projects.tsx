@@ -40,8 +40,8 @@ export default function Projects() {
                   <div className="mt-3 flex flex-wrap items-center gap-2">
                     {flowSteps.map((step, stepIndex) => (
                       <React.Fragment key={`${project.title}-${step}`}>
-                        <span className="chip">{step}</span>
-                        {stepIndex < flowSteps.length - 1 && <ArrowUpRight size={12} className="text-muted" />}
+                        <span className="chip whitespace-normal break-words text-left leading-tight">{step}</span>
+                        {stepIndex < flowSteps.length - 1 && <ArrowUpRight size={12} className="shrink-0 text-muted" />}
                       </React.Fragment>
                     ))}
                   </div>
