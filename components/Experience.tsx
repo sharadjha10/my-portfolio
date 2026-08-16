@@ -36,7 +36,7 @@ export default function Experience() {
         </div>
         <div className="p-5 md:p-6">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start"><div><div className="flex flex-wrap items-center gap-3"><h4 className="text-xl font-bold tracking-tight text-strong">{exp.title}</h4>{exp.current && <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-xs font-semibold text-accent"><BadgeCheck size={14}/> Current</span>}</div><p className="mt-2 text-sm text-muted">{exp.summary}</p></div><span className="hidden rounded-xl border border-[color:var(--border)] p-2 text-accent sm:block"><Briefcase size={19}/></span></div>
-          <ul className="mt-5 grid gap-2 md:grid-cols-2">{exp.bullets.map((bullet) => <li key={bullet} className="flex gap-2.5 text-sm leading-relaxed text-body"><Check className="mt-1 shrink-0 text-accent" size={15}/><span>{bullet}</span></li>)}</ul>
+          <ul className="mt-5 grid gap-x-8 gap-y-3 md:grid-cols-2">{exp.bullets.map((bullet) => <li key={bullet} className="flex min-w-0 items-start gap-3 text-sm leading-6 text-body"><Check className="mt-[.3rem] shrink-0 text-accent" size={15}/><span>{bullet}</span></li>)}</ul>
           <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[color:var(--border)] pt-4">{exp.skills.map((skill) => <span key={skill} className="chip">{skill}</span>)}<span className="ml-auto hidden items-center gap-1 text-xs font-semibold text-accent sm:inline-flex">Role details <ChevronRight size={15}/></span></div>
         </div>
       </article>)}
